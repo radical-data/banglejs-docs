@@ -31,6 +31,10 @@ export default defineConfig({
           label: "Tutorials",
           items: [
             { label: "Write Your First App", link: "tutorials/first-app" },
+            {
+              label: "Build a Custom Watchface",
+              link: "tutorials/custom-watchface",
+            },
           ],
         },
         {
