@@ -26,6 +26,7 @@ export default defineConfig({
         baseUrl: "https://github.com/radical-data/banglejs-docs/edit/main/",
       },
       sidebar: [
+        { label: "Initial Setup", link: "/initial-setup" },
         {
           label: "Tutorials",
           items: [
