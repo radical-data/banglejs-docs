@@ -4,16 +4,12 @@ import starlight from "@astrojs/starlight";
 import path from "node:path";
 
 export default defineConfig({
-  vite: {
-    resolve: {
-      alias: {
-        $src: path.resolve("./src"),
-        $assets: path.resolve("./src/assets"),
-      },
-    },
+  site: "https://banglejs.radicaldata.org",
+
   image: {
     service: sharpImageService(),
   },
+
   integrations: [
     starlight({
       title: "Bangle.js Documentation",
@@ -58,4 +54,13 @@ export default defineConfig({
       ],
     }),
   ],
+
+  vite: {
+    resolve: {
+      alias: {
+        $src: path.resolve("./src"),
+        $assets: path.resolve("./src/assets"),
+      },
+    },
+  },
 });
