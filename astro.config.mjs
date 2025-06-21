@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import starlight from "@astrojs/starlight";
 import path from "node:path";
 
@@ -11,6 +11,8 @@ export default defineConfig({
         $assets: path.resolve("./src/assets"),
       },
     },
+  image: {
+    service: sharpImageService(),
   },
   integrations: [
     starlight({
