@@ -1,0 +1,179 @@
+---
+title: Write Your First App
+description: Build a simple interactive app that runs on your watch.
+---
+
+Now that your Bangle.js is set up and connected to your computer, let’s write your first real app for it — a small, interactive program that runs on the watch and responds to user input.
+
+You’ll:
+
+- Run a live command from your computer to your watch
+- Display text on screen
+- Respond to button presses
+- Save your app so it appears in the watch’s launcher
+
+No previous embedded experience needed.
+
+## Run Your First Command
+
+Let’s start small.
+
+We can write our own code for the Bangle.js in the [Espruino Web IDE](https://www.espruino.com/ide/).
+
+After going to that link, connect your device by clicking the connect icon in the top left corner.
+
+import WebIDEConnectReference from "./web-ide-connect.png";
+
+<img src={WebIDEConnectReference.src} alt="image description" />
+
+Then, in the console (on the left side), type:
+
+```js
+Bangle.buzz();
+```
+
+Then press **Enter**.
+
+Your watch should vibrate! You just sent a live JavaScript command over Bluetooth.
+
+### What just happened?
+
+The left side is a REPL, for making code run immediately on your Bangle.js. This is great for trying things out quickly, or iteratively writing something.
+
+## Display "Hello!" on Screen
+
+But we usually want to build up bigger chunks of code. For this we don't use REPL, but use an editor where we can write full files and upload them. This is what the Editor is for.
+
+In the **Editor pane (right side)**, paste this:
+
+```js
+g.reset(); // reset graphics state to defaultÇ
+g.setBgColor(0, 0, 0); // black background
+g.clear(); // clear screen with background colour black
+g.setColor(1, 1, 1); // white text
+g.setFontAlign(0, 0); // centre-align text
+g.setFont("6x8", 2); // double-size font
+g.drawString("Hello!", g.getWidth() / 2, g.getHeight() / 2);
+g.flip(); // update the display
+```
+
+Click the **Upload** button in the middle.
+
+import uploadScriptButton from "./upload.png";
+
+<img src={uploadScriptButton.src} alt="image description" />
+
+You should see "Hello!" centred on the watch screen.
+
+### What This Code Does
+
+- `g.setBgColor(0, 0, 0)` sets the background to black
+- `g.clear()` clears the screen using the current background colour
+- `g.setColor(1, 1, 1)` sets the text colour to white
+- `g.setFont()` and `g.setFontAlign()` control the text size and alignment
+- `g.drawString()` draws the text at the specified screen coordinates
+- `g.flip()` updates the display to show the changes
+
+## Add Interactivity
+
+Let’s make the watch respond when you press the button.
+
+Replace the code with:
+
+```js
+function showMessage(msg) {
+  g.reset();
+  g.setBgColor(0, 0, 0);
+  g.setColor(1, 1, 1);
+  g.clear();
+  g.setFontAlign(0, 0);
+  g.setFont("6x8", 2);
+  g.drawString(msg, g.getWidth() / 2, g.getHeight() / 2);
+  g.flip();
+}
+
+showMessage("Press BTN1!");
+
+setWatch(
+  () => {
+    showMessage("Pressed!");
+    Bangle.buzz(100);
+    setTimeout(() => showMessage("Press BTN1!"), 1000);
+  },
+  BTN1,
+  { edge: "rising", debounce: 50, repeat: true }
+);
+```
+
+Now when you press the button:
+
+- The screen changes
+- The watch vibrates
+- It resets after a second
+
+### New Concepts
+
+- `setWatch()` runs code when the button is pressed
+- `Bangle.buzz()` makes the watch vibrate
+- `setTimeout()` delays execution
+
+## Save the App to Your Watch
+
+Let’s make it permanent.
+
+### Save the App Code
+
+1. In the Web IDE, click the drop down arrow on the 'Send to Espruino' icon.
+1. Choose 'Storage'
+1. Select 'New file'
+1. Save the code as: `myfirstapp.app.js`
+
+### Add the `.info` File
+
+This makes your app appear in the launcher.
+
+1. In the console pane (left) of the Web IDE, paste and run:
+
+```json
+require("Storage").write("myfirstapp.info", {
+  id: "myfirstapp",
+  name: "My First App",
+  src: "myfirstapp.app.js"
+});
+```
+
+2. Press Enter to send it to the watch.
+
+_It’ll still show up even if you don’t have an icon file._
+
+## Launch and Run It
+
+### From the Watch
+
+1. Long-press the button (\~3 seconds) to open the launcher
+2. Find **My First App**
+3. Tap it to run
+
+### From the IDE
+
+You can also run it from the **console pane (left)** by running:
+
+```js
+load("myfirstapp.app.js");
+```
+
+## What’s Next?
+
+You’ve now:
+
+- Sent live code to the watch
+- Displayed graphics
+- Handled input
+- Saved and launched an app
+
+Try more:
+
+- [🕒 Build a Custom Watchface](../building-a-watchface)
+- [🪑 Use Sensors and Buttons](../../guides/using-sensors)
+- [🧩 Create Menus and UI Elements](../custom-ui)
+- [📘 Explore the Bangle.js API](../../reference/)

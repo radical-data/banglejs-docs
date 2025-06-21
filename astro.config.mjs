@@ -30,6 +30,7 @@ export default defineConfig({
         {
           label: "Tutorials",
           items: [
+            { label: "Write Your First App", link: "tutorials/first-app" },
           ],
         },
         {
