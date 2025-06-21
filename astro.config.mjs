@@ -35,6 +35,10 @@ export default defineConfig({
               label: "Build a Custom Watchface",
               link: "tutorials/custom-watchface",
             },
+            {
+              label: "Show Data on Your Watchface",
+              link: "tutorials/add-clock-info",
+            },
           ],
         },
         {

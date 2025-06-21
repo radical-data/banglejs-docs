@@ -19,10 +19,10 @@ Paste this code into the Editor pane (right side) of the IDE:
 ```js
 function draw() {
   g.reset();
-  g.setBgColor(0, 0, 0);
+  g.setBgColor(1, 1, 1);
   g.clear();
   let time = require("locale").time(new Date(), 1);
-  g.setColor(1, 1, 1);
+  g.setColor(0, 0, 0);
   g.setFontAlign(0, 0);
   g.setFont("Vector", 40); // built-in scalable font
   g.drawString(time, g.getWidth() / 2, g.getHeight() / 2);
@@ -47,14 +47,14 @@ Replace your `draw()` function with:
 ```js
 function draw() {
   g.reset();
-  g.setBgColor(0, 0, 0);
+  g.setBgColor(1, 1, 1);
   g.clear();
 
   let now = new Date();
   let time = require("locale").time(now, 1);
   let date = require("locale").date(now);
 
-  g.setColor(1, 1, 1);
+  g.setColor(0, 0, 0);
   g.setFontAlign(0, 0);
 
   // Time
@@ -107,12 +107,12 @@ Bangle.loadWidgets();
 
 function draw() {
   g.reset();
-  g.setBgColor(0, 0, 0);
+  g.setBgColor(1, 1, 1);
   g.clear();
 
   Bangle.drawWidgets();
 
-  g.setColor(1, 1, 1);
+  g.setColor(0, 0, 0);
 
   let now = new Date();
   let time = require("locale").time(now, 1);
@@ -181,7 +181,8 @@ On your watch:
 
 ## 🎨 Customise Further
 
-- Try different fonts, e.g. `"7x11Numeric7Seg:4"` for a digital look
+- Make a 'dark mode' version
+- Try different fonts (e.g. `"7x11Numeric7Seg:4"`) for a digital look
 - Create your own fonts with the [Font Converter](https://www.espruino.com/Font+Converter)
 - Add an icon with `g.drawImage()`
 - Show seconds
