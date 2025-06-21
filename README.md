@@ -1,54 +1,44 @@
-# Starlight Starter Kit: Basics
+# 🕰️ Bangle.js Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Welcome to the docs site for Bangle.js, a fully open source, programmable smartwatch. This site helps people explore, build, and understand Bangle.js tools and internals.
 
-```
-pnpm create astro@latest -- --template starlight
-```
+## ✍️ How to Contribute
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+- Fix a typo? Make a PR.
+- Want to write a guide? Create a new .mdx file in the right folder under `src/content/docs/`.
+- Unsure where something fits? Ask or open an issue.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📚 Documentation Structure
 
-## 🚀 Project Structure
+We follow the [Diátaxis documentation framework](https://diataxis.fr/), which separates documentation into **four distinct types**:
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+| **Section**     | **Use this when…**                                            |
+| --------------- | ------------------------------------------------------------- |
+| `tutorials/`    | You’re guiding a beginner step-by-step through something new. |
+| `guides/`       | You’re showing how to accomplish a specific task.             |
+| `reference/`    | You’re documenting APIs, specs, or commands.                  |
+| `explanations/` | You’re explaining concepts, internals, or design rationale.   |
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+> 💡 We also organise content into [streams](/streams/), thematic pathways that help users achieve bigger goals across tutorial/guide/explanation boundaries. Use them to orient users, not replace the Diátaxis structure.
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## 📦 Style & Naming Conventions
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+- Say "Bangle.js" for the platform overall.
+- Refer to "Bangle.js 2" only when distinguishing between models is important.
+- If a doc is hardware-specific, clearly label it (e.g. with callouts or headers).
+- Use clear, plain English and second person ("you").
+- Keep intros short; prioritise code and examples.
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## 🔧 Local Development
 
-## 🧞 Commands
+| Command        | Action                                    |
+| -------------- | ----------------------------------------- |
+| `pnpm install` | Install dependencies                      |
+| `pnpm dev`     | Start local dev server (`localhost:4321`) |
 
-All commands are run from the root of the project, from a terminal:
+## 📚 Learn More About the Stack
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [Diátaxis Documentation Design](https://diataxis.fr/)
+- [Astro Docs](https://docs.astro.build)
+- [Starlight Site Framework](https://starlight.astro.build)
+- [Espruino Reference](https://www.espruino.com/Documentation)
