@@ -1,36 +1,50 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash
+title: Welcome to the Bangle.js Docs
+description: Explore, develop, and understand your open source smartwatch.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Everything you need to hack and build with your Bangle.js.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/banglejs-logo-small.svg
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Getting Started
+      link: /initial-setup/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Get a Bangle.js
+      link: https://banglejs.com/
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## Next steps
+## What's here
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Build something" icon="hammer">
+    New to Bangle.js? Head to the <a href="/tutorials/">tutorials</a> to start
+    building your first app or watchface.
+  </Card>
+  <Card title="Solve a problem" icon="lightbulb">
+    Looking to accomplish something specific? Check out the{" "}
+    <a href="/guides/">how-to guides</a> for practical tasks and fixes.
+  </Card>
+  <Card title="Look up technical details" icon="code">
+    Dive into <a href="/reference/">reference docs</a> for hardware specs, APIs,
+    and software interfaces.
+  </Card>
+  <Card title="Understand the system" icon="brain">
+    Read the <a href="/explanations/">explanations</a> to learn how Bangle.js
+    works under the hood.
+  </Card>
 </CardGrid>
+
+## Why Bangle.js?
+
+**Bangle.js** is a fully open source smartwatch powered by [Espruino](https://www.espruino.com/). You write apps in JavaScript, deploy with a browser, and shape your watch to fit your life.
+
+This site is here to help you:
+
+- Explore what's possible
+- Develop your own apps and tools
+- Understand how the system works
+- Troubleshoot and extend your watch
