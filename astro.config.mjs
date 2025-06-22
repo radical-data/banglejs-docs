@@ -1,14 +1,10 @@
 // @ts-check
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import path from "node:path";
 
 export default defineConfig({
   site: "https://banglejs.radicaldata.org",
-
-  image: {
-    service: sharpImageService(),
-  },
 
   integrations: [
     starlight({
